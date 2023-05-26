@@ -18,7 +18,7 @@ namespace PurebaClase1.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Catalogo()
         {
             return View();
         }
