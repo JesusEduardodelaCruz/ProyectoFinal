@@ -11,7 +11,7 @@ using PurebaClase1.Models.dbModels;
 
 namespace PurebaClase1.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin") ]
     public class RopasController : Controller
     {
         private readonly ProyectoBDContext _context;

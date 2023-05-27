@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using PurebaClase1.Models.dbModels;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,10 +18,11 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole<int>>(options => opti
     .AddDefaultTokenProviders();
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
-builder.Services.ConfigureApplicationCookie(option =>
+builder.Services.ConfigureApplicationCookie(options =>
 {
-    option.LoginPath = "/Identity/Account/Login";
-    option.LogoutPath = "/Identity/Account/Register";
+    options.LoginPath = "/Identity/Account/Login";
+    options.LogoutPath = "/Identity/Account/Register";
+    options.AccessDeniedPath = "/Identity/Account/AccessDenied";
 });
 
 var app = builder.Build();
