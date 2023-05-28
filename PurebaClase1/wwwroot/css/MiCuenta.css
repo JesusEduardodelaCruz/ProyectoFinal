@@ -6,9 +6,12 @@
     height: 100vh;
 }
 
-.botones {
+#buttons {
     display: flex;
     justify-content: center;
+    width: 550px;
+    height: 150px;
+    border-color: black;
 }
 
 h1 {
@@ -17,14 +20,6 @@ h1 {
     justify-content: center;
 }
 
-button {
-    width: 550px;
-    height: 150px;
-}
-
-#buttons {
-    border-color: black;
-}
 
 #grupo2 {
     margin-top: 5px;
@@ -34,13 +29,3 @@ button {
     margin-top: 50px;
 }
 
-#betonav {
-    width: 50px;
-    height: 50px;
-    margin-left: 0px;
-}
-
-#usuario {
-    width: 150px;
-    height: 150px;
-}
