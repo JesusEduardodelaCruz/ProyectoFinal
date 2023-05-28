@@ -11,6 +11,11 @@ namespace PurebaClase1.Controllers
 {
     public class DireccionsController : Controller
     {
+
+        public IActionResult Micuenta()
+        {
+            return View();
+        }
         private readonly ProyectoBDContext _context;
 
         public DireccionsController(ProyectoBDContext context)

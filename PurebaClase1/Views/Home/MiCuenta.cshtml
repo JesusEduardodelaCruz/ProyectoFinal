@@ -3,7 +3,7 @@
 }
 
 
-<link rel="stylesheet" href="/css/MiCuenta">
+<link rel="stylesheet" href="/css/MiCuenta.css">
 
 <div class="container">
     <div id="name" class="row">
@@ -15,11 +15,9 @@
         <div class="botones col lg-12">
             <div>
                 <button type="button" class="btn btn-light">Mis pedidos</button>
-                <button type="button" class="btn btn-light">Direccion</button>
+                <a href="@Url.Action("Index", "Direccions")" class="btn btn-light">Direcciones</a>
                 <div id="grupo2">
-                    <a type="button" class="btn btn-light" href="https://localhost:7026/MetodoDePagoes">
-                        Formas de pago
-                    </a>
+                    <a href="@Url.Action("Index", "MetodoDePagoes")" class="btn btn-light">Formas de pago</a>
                     <button type="button" class="btn btn-light">Informacion</button>
                 </div>
             </div>
@@ -27,3 +25,4 @@
 
     </div>
 </div>
+

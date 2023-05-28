@@ -7,10 +7,15 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PurebaClase1.Models.dbModels;
 
-namespace PurebaClase1.Views
+namespace PurebaClase1.Controllers
 {
     public class MetodoDePagoesController : Controller
     {
+        public IActionResult Micuenta()
+        {
+            return View();
+        }
+
         private readonly ProyectoBDContext _context;
 
         public MetodoDePagoesController(ProyectoBDContext context)
@@ -154,14 +159,14 @@ namespace PurebaClase1.Views
             {
                 _context.MetodoDePagos.Remove(metodoDePago);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool MetodoDePagoExists(int id)
         {
-          return (_context.MetodoDePagos?.Any(e => e.IdMetododepago == id)).GetValueOrDefault();
+            return (_context.MetodoDePagos?.Any(e => e.IdMetododepago == id)).GetValueOrDefault();
         }
     }
 }
