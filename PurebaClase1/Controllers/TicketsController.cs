@@ -11,6 +11,10 @@ namespace PurebaClase1.Controllers
 {
     public class TicketsController : Controller
     {
+        public IActionResult Ticketadmin()
+        {
+            return View();
+        }
         private readonly ProyectoBDContext _context;
 
         public TicketsController(ProyectoBDContext context)

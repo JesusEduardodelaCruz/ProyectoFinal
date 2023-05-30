@@ -11,6 +11,10 @@ namespace PurebaClase1.Controllers
 {
     public class ColorsController : Controller
     {
+        public IActionResult Ropadmin()
+        {
+            return View();
+        }
         private readonly ProyectoBDContext _context;
 
         public ColorsController(ProyectoBDContext context)

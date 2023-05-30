@@ -14,6 +14,10 @@ namespace PurebaClase1.Controllers
     [Authorize(Roles = "Admin") ]
     public class RopasController : Controller
     {
+        public IActionResult Ropadmin()
+        {
+            return View();
+        }
         private readonly ProyectoBDContext _context;
 
         public RopasController(ProyectoBDContext context)
