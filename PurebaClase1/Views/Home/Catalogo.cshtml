@@ -53,62 +53,141 @@
                 </ul>
             </div>
         </nav>
+
         <main class="col-md-10 ms-sm-auto px-4">
             <div class="container-fluid">
-                <div id="Ropa" class="row">
-                    <div class="card" style="width: 18rem;">
-                        <img src="~/abrigo negro.jpg" class="card-img-top" alt="aqui creo va un abrigo">
-                        <div class="card-body">
-                            <h5 class="card-title">$1500</h5>
-                            <p class="card-text">Abrigo tipo gabardina color negro oscuro</p>
-                            <button type="button" class="btn btn-dark">Ver</button>
-                        </div>
-                    </div>
-                    <div class="card" style="width: 18rem;">
-                        <img src="~/abrigo negro.jpg" class="card-img-top" alt="aqui creo va un abrigo">
-                        <div class="card-body">
-                            <h5 class="card-title">$1500</h5>
-                            <p class="card-text">Abrigo tipo gabardina color negro oscuro</p>
-                            <button type="button" class="btn btn-dark">Ver</button>
-                        </div>
-                    </div>
-                    <div class="card" style="width: 18rem;">
-                        <img src="~/abrigo negro.jpg" class="card-img-top" alt="aqui creo va un abrigo">
-                        <div class="card-body">
-                            <h5 class="card-title">$1500</h5>
-                            <p class="card-text">Abrigo tipo gabardina color negro oscuro</p>
-                            <button type="button" class="btn btn-dark">Ver</button>
-                        </div>
-                    </div>
-
-                    <div class="card" style="width: 18rem;">
-                        <img src="~/abrigo negro.jpg" class="card-img-top" alt="aqui creo va un abrigo">
-                        <div class="card-body">
-                            <h5 class="card-title">$1500</h5>
-                            <p class="card-text">Abrigo tipo gabardina color negro oscuro</p>
-                            <button type="button" class="btn btn-dark">Ver</button>
-                        </div>
-                    </div>
+                <div class="col-md-9">
                     <div class="row">
-                    <div class="card" style="width: 18rem;">
-                        <img src="~/abrigo negro.jpg" class="card-img-top" alt="aqui creo va un abrigo">
-                        <div class="card-body">
-                            <h5 class="card-title">$1500</h5>
-                            <p class="card-text">Abrigo tipo gabardina color negro oscuro</p>
-                            <button type="button" class="btn btn-dark">Ver</button>
+                        <!-- Columna 1 -->
+                        <div class="col-md-4 product">
+                            <div class="card" style="width: 14rem;">
+                                <img src="/abrigo negro.jpg" class="card-img-top product-image" alt="...">
+                                <div class="card-body">
+                                    <h1>$2500</h1>
+                                    <p class="card-text">Abrigo negro profundo, realizado con seda extra suave para la comodidad.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Abrigohombre">
+                                        Ver
+                                    </button>
+                                    <button type="button" class="btn btn-dark">Comprar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Columna 2 -->
+                        <div class="col-md-4 product">
+                            <div class="card" style="width: 14rem;">
+                                <img src="/abrigo mujer.jpg" class="card-img-top product-image" alt="...">
+                                <div class="card-body">
+                                    <h1>$2200</h1>
+                                    <p class="card-text">Abrigo de mujer color cafe claro, realizado con seda suave y resistente.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Abrigomujer">
+                                        Ver
+                                    </button>
+                                    <button type="button" class="btn btn-dark">Comprar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Columna 3 -->
+                        <div class="col-md-4 product">
+                            <div class="card" style="width: 14rem;">
+                                <img src="/cinto.jpg" class="card-img-top product-image" alt="...">
+                                <div class="card-body">
+                                    <h1>$800</h1>
+                                    <p class="card-text">Cinto 100% de cuero realizado a mano por excelentes fabricadores</p>
+                                </div>
+                                <div class="card-footer">
+                                    <button type="button" class="btn btn-dark">Ver</button>
+                                    <button type="button" class="btn btn-dark">Comprar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Columna 1 -->
+                        <div class="col-md-4 product">
+                            <div class="card" style="width: 14rem;">
+                                <img src="~/zapatos.jpg" class="card-img-top product-image" alt="...">
+                                <div class="card-body">
+                                    <h1>$1500</h1>
+                                    <p class="card-text">Zapatos para caballero clasicos con suela especial para la comodidad.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <button type="button" class="btn btn-dark">Ver</button>
+                                    <button type="button" class="btn btn-dark">Comprar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Columna 2 -->
+                        <div class="col-md-4 product">
+                            <div class="card" style="width: 14rem;">
+                                <img src="~/gorro.jpg" class="card-img-top product-image" alt="...">
+                                <div class="card-body">
+                                    <h1>$1200</h1>
+                                    <p class="card-text">Gorro inspirado en la serie peaky blinders incluye un porta navajas</p>
+                                </div>
+                                <div class="card-footer">
+                                    <button type="button" class="btn btn-dark">Ver</button>
+                                    <button type="button" class="btn btn-dark">Comprar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Columna 3 -->
+                        <div class="col-md-4 product">
+                            <div class="card" style="width: 14rem;">
+                                <img src="~/zapatos dama.jpg" class="card-img-top product-image" alt="...">
+                                <div class="card-body">
+                                    <h1>$1500</h1>
+                                    <p class="card-text">Zapatos para dama clasicos con suela especial para la comodidad.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <button type="button" class="btn btn-dark">Ver</button>
+                                    <button type="button" class="btn btn-dark">Comprar</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="card" style="width: 18rem;">
-                        <img src="~/abrigo negro.jpg" class="card-img-top" alt="aqui creo va un abrigo">
-                        <div class="card-body">
-                            <h5 class="card-title">$1500</h5>
-                            <p class="card-text">Abrigo tipo gabardina color negro oscuro</p>
-                            <button type="button" class="btn btn-dark">Ver</button>
-                        </div>
-                    </div>
-                </div>
                 </div>
             </div>
         </main>
+    </div>
+</div>
+
+<div class="modal fade" id="Abrigomujer" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Título del producto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <img src="/abrigo mujer.jpg" class="img-fluid" alt="Imagen del producto">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dark">Comprar</button>
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="Abrigohombre" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Título del producto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <img src="/abrigo negro.jpg" class="img-fluid" alt="Imagen del producto">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dark">Comprar</button>
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
     </div>
 </div>

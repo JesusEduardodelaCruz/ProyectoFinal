@@ -5,3 +5,20 @@
     background: linear-gradient(150deg, #E6E1E0, #A29E9D);
     height: 100vh;
 }
+
+/* Estilo personalizado para el menú lateral */
+.sidebar {
+    background-color: #f8f9fa;
+    height: 100vh;
+}
+/* Estilo personalizado para los productos */
+.product {
+    padding: 20px;
+    
+}
+/* Estilo personalizado para las imágenes de los productos */
+.product-image {
+    width: 100%;
+    height: auto;
+}
+
