@@ -1,0 +1,8 @@
+﻿body {
+    background-color: gray;
+    margin: 0;
+    padding: 0;
+    font-family: monserrat;
+    background: linear-gradient(150deg, #E6E1E0, #cecece);
+    height: 100vh;
+}
