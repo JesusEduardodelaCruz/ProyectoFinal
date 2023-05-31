@@ -6,10 +6,18 @@
     height: 100vh;
 }
 
-.btn-custom {
-    background-color: #f1f1f1;
-    color: #333;
+.btn1 {
+    background-color: gray;
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    text-decoration: none;
+    color: aliceblue;
+    padding: 15px 35px;
+    border-radius: 15px;
 }
+
 
 
 
