@@ -2,15 +2,19 @@
     ViewData["Title"] = "Tickets";
 }
 
-<link rel="stylesheet" href="/css/MiCuenta.css">
+<link rel="stylesheet" href="/css/Pantalladmin.css">
 
 
 <div class="container">
     <div class="row justify-content-center mt-5">
       <div class="col-md-6">
         <div class="text-center">
-          <a href="@Url.Action("Index", "Tickets")" class="btn btn-light">Ticket</a>
-          <a href="@Url.Action("Index", "CategoriaTickets")" class="btn btn-light">Categoria Ticket</a>
+            <div class="row">
+                    <a href="@Url.Action("Index", "Tickets")" id="btn1" class="btn btn-light">Ticket</a>
+                </div>
+                <div class="row">
+                    <a href="@Url.Action("Index", "CategoriaTickets")" id="btn2" class="btn btn-light">Categoria Ticket</a>
+                </div>
         </div>
       </div>
     </div>

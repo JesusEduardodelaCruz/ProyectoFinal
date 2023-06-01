@@ -2,18 +2,27 @@
     ViewData["Title"] = "Ropa";
 }
 
-<link rel="stylesheet" href="/css/MiCuenta.css">
+<link rel="stylesheet" href="/css/Pantalladmin.css">
 
 <div class="container">
     <div class="row justify-content-center mt-5">
       <div class="col-md-6">
         <div class="text-center">
-          <a href="@Url.Action("Index", "CategoriaRopas")" class="btn btn-light">Categoria de ropa</a>
-          <a href="@Url.Action("Index", "Colors")" class="btn btn-light">Color de ropa</a>
-          <a href="@Url.Action("Index", "Ropas")" class="btn btn-light">Ropa</a>
-          <a href="@Url.Action("Index", "RopaTallas")" class="btn btn-light">Ropa-Talla</a>
-          <a href="@Url.Action("Index", "Tallas")" class="btn btn-light">Tallas</a>
-        </div>
+            <div class="row">
+          <a href="@Url.Action("Index", "CategoriaRopas")" id="btn1" class="btn btn-light">Categoria de ropa</a>
+                </div>
+                <div class="row">
+                    <a href="@Url.Action("Index", "Colors")" id="btn2" class="btn btn-light">Color de ropa</a>
+                </div>
+                <div class="row">
+                    <a href="@Url.Action("Index", "Ropas")" id="btn3" class="btn btn-light">Ropa</a>
+                </div>
+                <div class="row">
+                    <a href="@Url.Action("Index", "RopaTallas")" id="btn4" class="btn btn-light">Ropa-Talla</a>
+                </div>
+                <div class="row">
+                    <a href="@Url.Action("Index", "Tallas")" id="btn5" class="btn btn-light">Tallas</a>
+                </div>
       </div>
     </div>
   </div>
