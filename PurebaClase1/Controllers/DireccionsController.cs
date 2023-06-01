@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -9,9 +10,10 @@ using PurebaClase1.Models.dbModels;
 
 namespace PurebaClase1.Controllers
 {
+    [Authorize]
     public class DireccionsController : Controller
     {
-
+        
         public IActionResult Micuenta()
         {
             return View();
