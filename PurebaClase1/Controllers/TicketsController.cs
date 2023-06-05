@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using PurebaClase1.Models;
 using PurebaClase1.Models.dbModels;
 
 namespace PurebaClase1.Controllers
@@ -65,11 +66,22 @@ namespace PurebaClase1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdTicket,Descripcion,IdUsuario,IdCategoria")] Ticket ticket)
+        public async Task<IActionResult> Create([Bind("IdTicket,Descripcion,IdUsuario,IdCategoria")] TicketsHR ticket)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(ticket);
+
+                Ticket ticket1 = new Ticket
+                {
+                    IdTicket = ticket.IdTicket,
+                    Descripcion = ticket.Descripcion,
+                    IdUsuario = ticket.IdUsuario,
+                    IdCategoria = ticket.IdCategoria
+
+
+                };
+
+                _context.Tickets.Add(ticket1);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
