@@ -5,7 +5,7 @@ using System.Diagnostics;
 
 namespace PurebaClase1.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    
     public class HomeController : Controller
     {
 
@@ -46,17 +46,17 @@ namespace PurebaClase1.Controllers
             return View();
         }
 
-        
+        [Authorize(Roles = "Admin")]
         public IActionResult Ticketadmin()
         {
             return View();
         }
-
+        [Authorize(Roles = "Admin")]
         public IActionResult Pantalladmin()
         {
             return View();
         }
-
+        [Authorize(Roles = "Admin")]
         public IActionResult Ropadmin()
         {
             return View();
