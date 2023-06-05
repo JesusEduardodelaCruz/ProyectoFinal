@@ -9,6 +9,7 @@ namespace PurebaClase1.Models.dbModels
 {
     public partial class ProyectoBDContext : IdentityDbContext<ApplicationUser, IdentityRole<int>, int>
     {
+
         public ProyectoBDContext()
         {
         }

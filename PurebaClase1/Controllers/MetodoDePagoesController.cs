@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using PurebaClase1.Models;
 using PurebaClase1.Models.dbModels;
 
 namespace PurebaClase1.Controllers
@@ -63,11 +64,22 @@ namespace PurebaClase1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdMetododepago,IdUsuario,NumeroDeTarjeta,Titular,Fecha,Cvv")] MetodoDePago metodoDePago)
+        public async Task<IActionResult> Create([Bind("IdMetododepago,IdUsuario,NumeroDeTarjeta,Titular,Fecha,Cvv")] MetodoDePagoHR metodoDePago)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(metodoDePago);
+                MetodoDePago metodoDePago1 = new MetodoDePago
+                {
+                    IdMetododepago = metodoDePago.IdMetododepago,
+                    IdUsuario = metodoDePago.IdUsuario,
+                    NumeroDeTarjeta = metodoDePago.NumeroDeTarjeta,
+                    Titular = metodoDePago.Titular,
+                    Fecha = metodoDePago.Fecha,
+                    Cvv = metodoDePago.Cvv
+                };
+
+
+                _context.MetodoDePagos.Add(metodoDePago1);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
