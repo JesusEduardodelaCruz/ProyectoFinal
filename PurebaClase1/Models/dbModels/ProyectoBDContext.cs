@@ -9,6 +9,7 @@ namespace PurebaClase1.Models.dbModels
 {
     public partial class ProyectoBDContext : IdentityDbContext<ApplicationUser, IdentityRole<int>, int>
     {
+
         public ProyectoBDContext()
         {
         }
@@ -30,6 +31,7 @@ namespace PurebaClase1.Models.dbModels
         public virtual DbSet<Talla> Tallas { get; set; } = null!;
         public virtual DbSet<Ticket> Tickets { get; set; } = null!;
         public virtual DbSet<Venta> Ventas { get; set; } = null!;
+        public object Direcciones { get; internal set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

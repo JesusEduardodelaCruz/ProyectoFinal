@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using PurebaClase1.Models;
 using PurebaClase1.Models.dbModels;
 
 namespace PurebaClase1.Controllers
@@ -63,11 +64,22 @@ namespace PurebaClase1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdDireccion,IdUsuario,Colonia,Calle,NoExt,CodigoPostal")] Direccion direccion)
+        public async Task<IActionResult> Create([Bind("IdDireccion,IdUsuario,Colonia,Calle,NoExt,CodigoPostal")] DireccionesHR direccion)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(direccion);
+                Direccion direccion1 = new Direccion
+                {
+                    IdDireccion = direccion.IdDireccion,
+                    IdUsuario = direccion.IdUsuario,
+                    Colonia = direccion.Colonia,
+                    Calle = direccion.Calle,
+                    NoExt = direccion.NoExt,
+                    CodigoPostal = direccion.CodigoPostal
+                };
+
+
+                _context.Direccions.Add(direccion1);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
