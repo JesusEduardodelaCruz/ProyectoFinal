@@ -8,14 +8,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\js\catalogo.js" />
     <Content Remove="wwwroot\js\index.js" />
   </ItemGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\js\catalogo.js" />
     <_ContentIncludedByDefault Remove="wwwroot\js\index.js" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\js\catalogo.js" />
     <None Include="wwwroot\js\index.js" />
   </ItemGroup>
 

@@ -29,7 +29,10 @@ namespace PurebaClase1.Controllers
         [AllowAnonymous]
         public IActionResult Catalogo()
         {
-            return View();
+            var viewModel = new CatalogoViewModel();
+            var listaRopa = _context.Ropas.ToList();
+            viewModel.Ropa = listaRopa;
+            return View(viewModel);
         }
 
         [AllowAnonymous]

@@ -1,6 +1,13 @@
-﻿@{
+﻿@using PurebaClase1.ViewModel;
+
+@model CatalogoViewModel
+@{
     ViewData["Title"] = "Catalogo";
 }
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="/js/catalogo.js"></script>
+
 
 <link rel="stylesheet" href="/css/Catalogo.css">
 <div class="container-fluid">
@@ -56,240 +63,49 @@
 
         <main class="col-md-10 ms-sm-auto px-4">
             <div class="container-fluid">
-                <div class="col-md-9">
                     <div class="row">
-                        <!-- Columna 1 -->
-                        <div class="col-md-4 product">
-                            <div class="card" style="width: 14rem;">
-                                <img src="/abrigo negro.jpg" class="card-img-top product-image" alt="...">
-                                <div class="card-body">
-                                    <h1>$2500</h1>
-                                    <p class="card-text">Abrigo negro profundo, realizado con seda extra suave para la comodidad.</p>
-                                </div>
-                                <div class="card-footer">
-                                    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#Abrigohombre">
-                                        Ver
-                                    </button>
-                                    <button type="button" class="btn btn-dark">Añadir al carrito</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Columna 2 -->
-                        <div class="col-md-4 product">
-                            <div class="card" style="width: 14rem;">
-                                <img src="/abrigo mujer.jpg" class="card-img-top product-image" alt="...">
-                                <div class="card-body">
-                                    <h1>$2200</h1>
-                                    <p class="card-text">Abrigo de mujer color cafe claro, realizado con seda suave y resistente.</p>
-                                </div>
-                                <div class="card-footer">
-                                    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#Abrigomujer">
-                                        Ver
-                                    </button>
-                                    <button type="button" class="btn btn-dark">Añadir al carrito</button>
+                        @foreach (Ropa ropa in Model.Ropa)
+                        {
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="card h-80" style="width: 16rem;">
+                                    <img src="@ropa.Imagen" class="card-img-top" alt="Producto 1">
+                                    <div class="card-body">
+                                        <h5 class="card-title">@ropa.Titulo</h5>
+                                        <p class="card-text">@ropa.Descripcion</p>
+                                        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalDetalle" data-titulo="@ropa.Titulo" data-descripcion="@ropa.Descripcion" data-imagen="@ropa.Imagen">
+                                            Ver
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- Columna 3 -->
-                        <div class="col-md-4 product">
-                            <div class="card" style="width: 14rem;">
-                                <img src="/cinto.jpg" class="card-img-top product-image" alt="...">
-                                <div class="card-body">
-                                    <h1>$800</h1>
-                                    <p class="card-text">Cinto 100% de cuero realizado a mano por excelentes fabricadores</p>
-                                </div>
-                                <div class="card-footer">
-                                    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#cinto">
-                                        Ver
-                                    </button>
-                                    <button type="button" class="btn btn-dark">Añadir al carrito</button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Columna 1 -->
-                        <div class="col-md-4 product">
-                            <div class="card" style="width: 14rem;">
-                                <img src="~/zapatos.jpg" class="card-img-top product-image" alt="...">
-                                <div class="card-body">
-                                    <h1>$1500</h1>
-                                    <p class="card-text">Zapatos para caballero clasicos con suela especial para la comodidad.</p>
-                                </div>
-                                <div class="card-footer">
-                                    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#zapatoshombre">
-                                        Ver
-                                    </button>
-                                    <button type="button" class="btn btn-dark">Añadir al carrito</button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Columna 2 -->
-                        <div class="col-md-4 product">
-                            <div class="card" style="width: 14rem;">
-                                <img src="~/gorro.jpg" class="card-img-top product-image" alt="...">
-                                <div class="card-body">
-                                    <h1>$1200</h1>
-                                    <p class="card-text">Gorro inspirado en la serie peaky blinders incluye un porta navajas</p>
-                                </div>
-                                <div class="card-footer">
-                                    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#Peaky">
-                                        Ver
-                                    </button>
-                                    <button type="button" class="btn btn-dark">Añadir al carrito</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Columna 3 -->
-                        <div class="col-md-4 product">
-                            <div class="card" style="width: 14rem;">
-                                <img src="~/zapatos dama.jpg" class="card-img-top product-image" alt="...">
-                                <div class="card-body">
-                                    <h1>$1500</h1>
-                                    <p class="card-text">Zapatos para dama clasicos con suela especial para la comodidad.</p>
-                                </div>
-                                <div class="card-footer">
-                                    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#Zapatodama">
-                                        Ver
-                                    </button>
-                                    <button type="button" class="btn btn-dark">Añadir al carrito</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        }
                 </div>
             </div>
         </main>
     </div>
 </div>
 
-<!-- modal 1 -->
+<!-- modal  -->
 
-<div class="modal fade" id="Abrigohombre" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+<div class="modal fade" id="modalDetalle" tabindex="-1" aria-labelledby="modalDetalleLabel" aria-hidden="true">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Abrigo negro para caballero</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                <h5 class="modal-title" id="modalDetalleLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <img src="/abrigo negro.jpg" class="img-fluid" alt="Imagen del producto">
-                <h2>$2500</h2>
-                <p>Abrigo negro profundo, realizado con seda extra suave para la comodidad.</p>
+                <img id="modalImagen" src="" alt="Imagen de la prenda">
+                <p id="modalDescripcion"></p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-dark">Añadir al carrito</button>
-                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Agregar al carrito</button>
             </div>
         </div>
     </div>
 </div>
 
 
-<!-- modal 2 -->
 
-<div class="modal fade" id="Abrigomujer" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Abrigo para dama</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-            </div>
-            <div class="modal-body">
-                <img src="/abrigo mujer.jpg" class="img-fluid" alt="Imagen del producto">
-                <h2>$2200</h2>
-                <p>Abrigo de mujer color cafe claro, realizado con seda suave y resistente.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-dark">Añadir al carrito</button>
-                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- modal 3 -->
-<div class="modal fade" id="cinto" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Cinto caballero</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-            </div>
-            <div class="modal-body">
-                <img src="/cinto.jpg" class="img-fluid" alt="Imagen del producto">
-                <h2>$800</h2>
-                <p>Cinto 100% de cuero realizado a mano por excelentes fabricadores</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-dark">Añadir al carrito</button>
-                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- modal 1 -->
- <div class="modal fade" id="zapatoshombre" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Zapatos caballero</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-            </div>
-            <div class="modal-body">
-                <img src="/zapatos.jpg" class="img-fluid" alt="Imagen del producto">
-                <h2>$1500</h2>
-                <p>Zapatos para caballero clasicos con suela especial para la comodidad</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-dark">Añadir al carrito</button>
-                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- modal 2 -->
-<div class="modal fade" id="Peaky" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Gorro Peaky Blinder</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-            </div>
-            <div class="modal-body">
-                <img src="/gorro.jpg" class="img-fluid" alt="Imagen del producto">
-                <h2>$1200</h2>
-                <p>Gorro inspirado en la serie peaky blinders incluye un porta navajas hecho con la mayor delicadeza posible para hacer una replica igual en honor a la serie</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-dark">Añadir al carrito</button>
-                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- modal 3 -->
- <div class="modal fade" id="Zapatodama" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Zapato dama</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-            </div>
-            <div class="modal-body">
-                <img src="/zapatos dama.jpg" class="img-fluid" alt="Imagen del producto">
-                <h2>$1500</h2>
-                <p>Zapatos para dama clasicos con suela especial para la comodidad</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-dark">Añadir al carrito</button>
-                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
 
