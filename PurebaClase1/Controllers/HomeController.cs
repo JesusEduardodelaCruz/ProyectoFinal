@@ -1,26 +1,32 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using PurebaClase1.Models;
+using PurebaClase1.Models.dbModels;
+using PurebaClase1.ViewModel;
 using System.Diagnostics;
 
 namespace PurebaClase1.Controllers
 {
+
     [Authorize(Roles = "Admin")]
     public class HomeController : Controller
     {
 
-        private readonly ILogger<HomeController> _logger;
+        private readonly ProyectoBDContext _context;
 
-        
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ProyectoBDContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
         [AllowAnonymous]
         public IActionResult Index()
         {
-            return View();
+            var viewModel = new IndexViewModel();
+            var listaRopa = _context.Ropas.ToList();
+            viewModel.Ropa = listaRopa;
+            return View(viewModel);
         }
         [AllowAnonymous]
         public IActionResult Catalogo()

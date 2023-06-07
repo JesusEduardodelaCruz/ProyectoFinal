@@ -1,6 +1,13 @@
-﻿@{
+﻿@using PurebaClase1.ViewModel;
+
+@model IndexViewModel
+
+@{
     ViewData["Title"] = "Home Page";
 }
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="/js/index.js"></script>
 
 <link rel="stylesheet" href="/css/Index.css">
 
@@ -33,117 +40,47 @@
 <div class="container mt-5">
     <h2>Productos destacados</h2>
     <div class="row">
+    @foreach(Ropa ropa in Model.Ropa)
+    {
         <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-                <img src="/abrigo mujer.jpg" class="card-img-top" alt="Producto 1">
+            <div class="card h-100" style="width: 18rem;">
+                <img src="@ropa.Imagen" class="card-img-top" alt="Producto 1">
                 <div class="card-body">
-                    <h5 class="card-title">Abrigo para dama</h5>
-                    <h4><strong>$2300</strong></h4>
-                    <p class="card-text">Abrigo para dama de la mejor calidad y al mejor precio</p>
-                    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#Abrigomujer">
+                    <h5 class="card-title">@ropa.Titulo</h5>
+                    <p class="card-text">@ropa.Descripcion</p>
+                    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalDetalle" data-titulo="@ropa.Titulo" data-descripcion="@ropa.Descripcion" data-imagen="@ropa.Imagen">
                         Ver
                     </button>
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-                <img src="/abrigo negro.jpg" class="card-img-top" alt="Producto 2">
-                <div class="card-body">
-                    <h5 class="card-title">Abrigo para caballero</h5>
-                    <h4><strong>$2300</strong></h4>
-                    <p class="card-text">Abrigo negro para caballero 100% de lana</p>
-                    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#Abrigohombre">
-                        Ver
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-                <img src="/cinto.jpg" class="card-img-top" alt="Producto 3">
-                <div class="card-body">
-                    <h5 class="card-title">Producto 3</h5>
-                    <h4><strong>$800</strong></h4>
-                    <p class="card-text">Cinto para caballero 100% de cuero</p>
-                    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#Abrigomujer">
-                        Ver
-                    </button>
-                </div>
-            </div>
-        </div>
+    }
     </div>
 </div>
 
 <p>Todo tipo de ropa desde damas a caballeros encuentras aqui La 9na Sinfonia tu lugar de eleccion  </p>
 
-<!-- modal 1 -->
+<!-- modal  -->
 
-<div class="modal fade" id="Abrigomujer" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+<div class="modal fade" id="modalDetalle" tabindex="-1" aria-labelledby="modalDetalleLabel" aria-hidden="true">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Abrigo para dama</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                <h5 class="modal-title" id="modalDetalleLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <img src="/abrigo mujer.jpg" class="img-fluid" alt="Imagen del producto">
-                <h2>$2200</h2>
-                <p>Abrigo de mujer color cafe claro, realizado con seda suave y resistente.</p>
+                <img id="modalImagen" src="" alt="Imagen de la prenda">
+                <p id="modalDescripcion"></p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-dark">Añadir al carrito</button>
-                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Agregar al carrito</button>
             </div>
         </div>
     </div>
 </div>
 
-<
-
-
-<!-- modal 2 -->
-<div class="modal fade" id="Abrigohombre" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title">Abrigo negro para caballero</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-        </div>
-        <div class="modal-body">
-            <img src="/abrigo negro.jpg" class="img-fluid" alt="Imagen del producto">
-            <h2>$2500</h2>
-            <p>Abrigo negro profundo, realizado con seda extra suave para la comodidad.</p>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-dark">Añadir al carrito</button>
-            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
-        </div>
-    </div>
-</div>
-</div>
-
-
-<!-- modal 3 -->
-<div class="modal fade" id="cinto" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Cinto caballero</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-            </div>
-            <div class="modal-body">
-                <img src="/cinto.jpg" class="img-fluid" alt="Imagen del producto">
-                <h2>$800</h2>
-                <p>Cinto 100% de cuero realizado a mano por excelentes fabricadores</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-dark">Añadir al carrito</button>
-                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 
